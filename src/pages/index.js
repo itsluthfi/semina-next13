@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Brand from '@/components/Brand';
+import CardEvent from '@/components/CardEvent';
+import { getData } from '../utils/fetchData';
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -14,6 +16,16 @@ export default function Home() {
 
       <Header />
       <Brand />
+      <CardEvent data={data} title="Featured Events" subTitle="Grow Today" />
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const req = await getData('api/v1/events');
+  const res = req.data;
+
+  return {
+    props: { data: res },
+  };
 }
