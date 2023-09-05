@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Brand from '@/components/Brand';
 import CardEvent from '@/components/CardEvent';
-import { getData } from '../utils/fetchData';
+import { getData } from '@/utils/fetchData';
 
 export default function Home({ data }) {
   return (
