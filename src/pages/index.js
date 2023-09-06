@@ -2,6 +2,9 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Brand from '@/components/Brand';
 import CardEvent from '@/components/CardEvent';
+import Stories from '@/components/Stories';
+import Statistics from '@/components/Statistics';
+import Footer from '@/components/Footer';
 import { getData } from '@/utils/fetchData';
 
 export default function Home({ data }) {
@@ -17,6 +20,9 @@ export default function Home({ data }) {
       <Header />
       <Brand />
       <CardEvent data={data} title="Featured Events" subTitle="Grow Today" />
+      <Stories />
+      <Statistics />
+      <Footer />
     </>
   );
 }
