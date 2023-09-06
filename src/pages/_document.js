@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
+import { noOverlayWorkaroundScript } from '@/pages/_app';
 
 export default function Document() {
   return (
@@ -8,6 +9,9 @@ export default function Document() {
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: noOverlayWorkaroundScript }}
         />
       </Head>
       <body>
