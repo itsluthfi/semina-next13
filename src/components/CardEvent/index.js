@@ -9,18 +9,18 @@ export default function CardEvent({ data, title, subTitle }) {
       <div className="container">
         <CardTitle title={title} subTitle={subTitle} />
         <div className="mt-5 row gap">
-          {data?.map((data, index) => (
-            <div className="col-lg-3 col-md-6 col-12" key={index}>
+          {data?.map((data) => (
+            <div className="col-lg-3 col-md-6 col-12" key={data._id}>
               <div className="card-grow h-100">
                 <span className="badge-pricing">
                   {data.tickets.map((t) => (
-                    <>
+                    <div key={t._id}>
                       {t.statusTicketCategories
                         ? t.price === 0
                           ? 'free'
                           : `IDR ${t.price}`
                         : ''}
-                    </>
+                    </div>
                   ))}
                 </span>
                 <img
